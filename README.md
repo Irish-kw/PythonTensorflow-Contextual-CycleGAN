@@ -4,7 +4,7 @@
 
 last update 2021/01/14
 
-## Aythor
+## Author
 
 Dr.MengChang-Chen(Prof., mcc@iis.sinica.edu.tw)
 
