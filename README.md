@@ -29,4 +29,4 @@ and also we compare with KNN, Kriging.
 
 ![image](https://github.com/weisting-kw/PythonTensorflow-CycleGan-Interpolation-Taiwan-PM25/blob/main/example.png)
 
-![image](https://github.com/weisting-kw/PythonTensorflow-CycleGan-Interpolation-Taiwan-PM25/blob/main/example2.png)
+![image](https://github.com/weisting-kw/PythonTensorflow-CycleGan-Interpolation-Taiwan-PM25/blob/main/example2.jpg)
