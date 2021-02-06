@@ -10,9 +10,9 @@ Dr.MengChang-Chen(Prof., mcc@iis.sinica.edu.tw)
 
 Ming-chuan(theory, mingchuan@iis.sinica.edu.tw)
 
-Guo-Wei(MainProgram, "weisting@iis.sinica.edu.tw) 
+Guo-Wei(Program, "weisting@iis.sinica.edu.tw) 
 
-Neil(AssistProgram, leslie801013@gmail.com)
+Neil(Analysis, leslie801013@gmail.com)
 
 ## Description
 This project is for KDD paper,
