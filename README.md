@@ -1,13 +1,4 @@
-# PythonTensorflow-Contextual CycleGAN Based Sparse Grid Imputation withContext and Imprecise Source Data
-## Author
-
-Dr.MengChang-Chen(Prof., mcc@iis.sinica.edu.tw)
-
-Ming-chuan(theory, mingchuan@iis.sinica.edu.tw)
-
-Guo-Wei(Program, "weisting@iis.sinica.edu.tw) 
-
-Neil(Analysis, leslie801013@gmail.com)
+# PythonTensorflow-Contextual CycleGAN
 
 ## Description
 Left is 73 stations PM2.5 provid by EPA(Environmental Protection Administration, Taiwan, https://airtw.epa.gov.tw/)
