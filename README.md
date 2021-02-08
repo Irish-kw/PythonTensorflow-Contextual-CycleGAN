@@ -15,8 +15,6 @@ Guo-Wei(Program, "weisting@iis.sinica.edu.tw)
 Neil(Analysis, leslie801013@gmail.com)
 
 ## Description
-This project is for KDD paper,
-
 Left is 73 stations PM2.5 provid by EPA(Environmental Protection Administration, Taiwan, https://airtw.epa.gov.tw/)
 
 Right is our propose method to interpolation PM2.5 whole Taiwan, 
