@@ -1,9 +1,5 @@
 # PythonTensorflow-CycleGan-Interpolation-Taiwan-PM25
 
-## Not completed yet
-
-last update 2021/01/14
-
 ## Author
 
 Dr.MengChang-Chen(Prof., mcc@iis.sinica.edu.tw)
