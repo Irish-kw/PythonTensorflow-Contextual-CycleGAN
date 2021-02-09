@@ -30,10 +30,10 @@ def CWB_Table(cwb_total_list):
 
 #     cwb_total_list = np.load('cwb_stats_info_align.npy',allow_pickle=True)
 
-    title_api = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/'
+    title_api = ''
     wea_api_data = 'O-A0001-001' #https://opendata.cwb.gov.tw/dataset/observation/O-A0001-001
     rain_api_data = 'O-A0002-001' #https://opendata.cwb.gov.tw/dataset/observation/O-A0002-001
-    key_api = '?Authorization=CWB-2E076AC9-4DC3-403C-AA40-BBDAC59B0BA3&format=JSON'
+    key_api = ''
 
     cwb_wea_api_website = title_api + wea_api_data + key_api
     cwb_rain_api_website = title_api + rain_api_data + key_api
@@ -151,7 +151,7 @@ def CWB_Attribute_KNN(cwb_wea_table):
     return (np.array(total_attribute))
 
 def EPA_Table(info, custom_cmap, custom_norm, GeographyData_path):
-    api_website = "https://data.epa.gov.tw/api/v1/aqx_p_432?format=json&limit=100&api_key=9d2f256d-9325-4cb9-89d2-4cd96aca6979"
+    api_website = "https://data.epa.gov.tw/api/v1/aqx_p_432?format=json&limit=100&api_key="
     r = requests.get(api_website,verify=True)
     
     total_list = ['安南', '板橋', '菜寮', '彰化', '潮州', '嘉義', '大里', '大寮', '大同', '大園', '冬山',
@@ -738,34 +738,6 @@ def main_func_ex6(epa_pm25_table, cwb_wea_table, epa_time, cwb_time):
     print((str(time_format.date())+'-'+str(time_format.hour)+'_A2B_mse_'+str(mse)))
     print('figure save done')
 
-    connect = sqlite3.connect('SQL/Backend.sqlite')
-    time = str(epa_time.year) + '%.2d'%(epa_time.month) + '%.2d'%(epa_time.day)
-    sql = 'create table if not exists EPA_table ("Index" TEXT, "SiteName" TEXT, "SiteEngName" TEXT, "PM2.5_AVG" TEXT, "lat" TEXT, "lon" TEXT, "Publish_Time" TEXT)'
-    connect.execute(sql)
-    for _ in range(len(epa_pm25_table)):
-        sql = f'insert into EPA_table values("{str(_)}", "{epa_pm25_table.loc[_][0]}",\
-        "{epa_pm25_table.loc[_][1]}","{epa_pm25_table.loc[_][2]}","{epa_pm25_table.loc[_][3]}", \
-        "{epa_pm25_table.loc[_][4]}","{str(time_format)}")'
-        connect.execute(sql)
-    connect.commit()
-    connect.close()
-
-
-    connect = sqlite3.connect('SQL/Backend.sqlite')
-    time = str(cwb_time.year) + '%.2d'%(cwb_time.month) + '%.2d'%(cwb_time.day)
-    sql = 'create table if not exists CWB_table ("Index" TEXT, "locationName" TEXT, \
-    "stationId" TEXT, "Rain" TEXT, "WDIR" TEXT, "WDSD" TEXT, "TEMP" TEXT, "HUMD" TEXT, "lat" TEXT, "lon" TEXT, "Publish_Time" TEXT)'
-    connect.execute(sql)
-    for _ in range(len(cwb_wea_table)):
-        sql = f'insert into CWB_table values("{str(_)}", "{cwb_wea_table.loc[_][0]}",\
-        "{cwb_wea_table.loc[_][1]}","{cwb_wea_table.loc[_][2]}","{cwb_wea_table.loc[_][3]}", \
-        "{cwb_wea_table.loc[_][4]}","{cwb_wea_table.loc[_][5]}","{cwb_wea_table.loc[_][6]}", \
-        "{cwb_wea_table.loc[_][7]}","{cwb_wea_table.loc[_][8]}","{str(time_format)}")'
-        connect.execute(sql)
-    connect.commit()
-    connect.close()
-
-    print('SQL save done')
     del pred_full_graph, epa_pm25_table, pred_full_code, g_model_AtoB, EPA_PM25_Graph
     
     gc.collect()
